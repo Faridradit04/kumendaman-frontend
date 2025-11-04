@@ -1,0 +1,202 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* SLIDER STYLES - FULL WIDTH */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 500ms ease-in-out 300ms;
+}
+
+.slide.active .slide-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.slide-description {
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.slider-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.slider-btn.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 300ms ease;
+    backdrop-filter: blur(5px);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.nav-btn.prev {
+    left: 20px;
+}
+
+.nav-btn.next {
+    right: 20px;
+}
+
+.nav-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.slider-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.auto-play-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    transition: all 300ms ease;
+}
+
+.auto-play-toggle:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.toggle-icon {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+
+@media (max-width: 768px) {
+    .slider {
+        height: 400px;
+    }
+    
+    .slide-title {
+        font-size: 22px;
+    }
+    
+    .slide-description {
+        font-size: 14px;
+    }
+    
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        height: 300px;
+    }
+    
+    .slide-overlay {
+        padding: 20px;
+    }
+    
+    .slide-title {
+        font-size: 18px;
+    }
+    
+    .slide-description {
+        font-size: 13px;
+    }
+}

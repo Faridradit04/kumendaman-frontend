@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Kampung Kumendaman Suryodiningratan Mantrijeron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#dc2626',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo_kumendaman.png" alt="Logo Kampung" class="h-10 w-10">
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-primary">Kumendaman</span>
+                        <span class="text-sm text-gray-600">Kelurahan Suryodiningratan</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-gray-700 font-medium hover:text-secondary transition">Home</a></li>
+                    <li class="dropdown relative">
+                        <a href="profil.html" class="flex items-center text-gray-700 font-medium hover:text-secondary transition">
+                            Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="profil.html#informasi" class="block px-4 py-2 hover:bg-gray-100">Informasi</a></li>
+                            <li><a href="profil.html#demografi" class="block px-4 py-2 hover:bg-gray-100">Demografi</a></li>
+                            <li><a href="profil.html#sejarah" class="block px-4 py-2 hover:bg-gray-100">Sejarah</a></li>
+                            <li><a href="profil.html#visi-misi" class="block px-4 py-2 hover:bg-gray-100">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="flex items-center text-gray-700 font-medium hover:text-secondary transition">
+                            Media <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                            <li><a href="galeri.html" class="block px-4 py-2 hover:bg-gray-100">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="text-primary font-medium hover:text-secondary transition">Kontak</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobileMenu">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block py-2 text-gray-700 font-medium">Home</a></li>
+                    <li>
+                        <a href="profil.html" class="block py-2 text-gray-700 font-medium">Profil</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="profil.html#informasi" class="block py-1 text-gray-600">Informasi</a></li>
+                            <li><a href="profil.html#demografi" class="block py-1 text-gray-600">Demografi</a></li>
+                            <li><a href="profil.html#sejarah" class="block py-1 text-gray-600">Sejarah</a></li>
+                            <li><a href="profil.html#visi-misi" class="block py-1 text-gray-600">Visi & Misi</a></li>
+                        </ul>
+                    
+                        <a href="#" class="block py-2 text-gray-700 font-medium">Media</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="umkm.html" class="block py-1 text-gray-600">UMKM</a></li>
+                            <li><a href="galeri.html" class="block py-1 text-gray-600">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="block py-2 text-primary font-medium">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-secondary">Home</a>
+                <span class="text-gray-400">/</span>
+                <span class="text-gray-600">Kontak</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <section class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Silakan hubungi kami untuk informasi lebih lanjut tentang Kampung Kumendaman Suryodiningratan Mantrijeron</p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Informasi Kontak -->
+            <div class="bg-white rounded-lg shadow-md p-8 contact-card">
+                <h2 class="text-center text-2xl font-bold mb-6 text-gray-800">Informasi Kontak</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="text-2xl text-primary mr-4 mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Alamat Kantor Kampung</h4>
+                            <p class="text-gray-600">Jl. Suryodiningratan, Mantrijeron, Yogyakarta</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="text-2xl text-primary mr-4 mt-1">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Telepon</h4>
+                            <p class="text-gray-600">081 234 567 89</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="text-2xl text-primary mr-4 mt-1">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Email</h4>
+                            <p class="text-gray-600">admin@kumendaman.id</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="text-2xl text-primary mr-4 mt-1">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Jam Operasional</h4>
+                            <p class="text-gray-600">Senin - Jumat: 08.00 - 16.00 WIB</p>
+                            <p class="text-gray-600">Sabtu: 08.00 - 14.00 WIB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <h4 class="font-bold text-lg mb-3">Ikuti Kami</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-green-500 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Kontak -->
+            <div class="bg-white rounded-lg shadow-md p-8 contact-card">
+                <h2 class="text-center text-2xl font-bold mb-6 text-gray-800">Kirim Pesan</h2>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Masukkan nama lengkap">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Masukkan alamat email">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-gray-700 font-medium mb-2">Subjek</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Subjek pesan">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tulis pesan Anda di sini"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-3 px-4 rounded-md transition duration-300">
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Peta Lokasi -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Lokasi Kampung Kumendaman</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.159925846024!2d110.35614991477894!3d-7.774144194398782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a583e1b5f7b5b%3A0x1e3a0e2b5b5b5b5b!2sSuryodiningratan%2C%20Mantrijeron%2C%20Yogyakarta%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+        
+        <!-- Kontak Penting -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Kontak Penting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center contact-card">
+                    <div class="text-4xl text-secondary mb-4">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Puskesmas</h3>
+                    <p class="text-gray-600">(0274) 876208</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 text-center contact-card">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Polsek</h3>
+                    <p class="text-gray-600">(0274) 86184</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 text-center contact-card">
+                    <div class="text-4xl text-red-500 mb-4">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Damkar</h3>
+                    <p class="text-gray-600">(0274) 854828</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 text-center contact-card">
+                    <div class="text-4xl text-green-500 mb-4">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">PIN</h3>
+                    <p class="text-gray-600">123</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Tentang Web</h4>
+                    <p class="text-gray-300">Website Kampung Kumendaman Suryodiningratan Mantrijeron, Yogyakarta. Media komunikasi dan transparansi Pemerintah Kampung</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Kampung</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Jl. Suryodiningratan, Mantrijeron, Yogyakarta</p>
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i> 081 234 567 89</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i> admin@kumendaman.id</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Penting</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Puskesmas - (0274) 876208</li>
+                        <li>Polsek - (0274) 86184</li>
+                        <li>Damkar - (0274) 854828</li>
+                        <li>PIN - 123</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="profil.html" class="text-gray-300 hover:text-white transition">Profil Kampung</a></li>
+                        <li><a href="umkm.html" class="text-gray-300 hover:text-white transition">UMKM</a></li>
+                        <li><a href="galeri.html" class="text-gray-300 hover:text-white transition">Galeri Foto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>Copyright © Kampung Kumendaman Suryodiningratan Mantrijeron. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="fixed bottom-6 right-6 bg-primary hover:bg-blue-800 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition duration-300" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+   <script src="script.js"></script>
+</body>
+</html>

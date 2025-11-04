@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto - Kampung Kumendaman Suryodiningratan Mantrijeron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="custom.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#dc2626',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo_kumendaman.png" alt="Logo Kampung" class="h-10 w-10">
+                    <div class="flex flex-col ">
+                    <span class="text-xl font-bold text-primary">Kumendaman</span>
+                    <span class="text-sm text-gray-600">Kelurahan Suryodiningratan</span>
+
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-gray-700 font-medium hover:text-secondary transition">Home</a></li>
+                    <li class="dropdown relative">
+                        <a href="profil.html" class="flex items-center text-gray-700 font-medium hover:text-secondary transition">
+                            Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="profil.html#informasi" class="block px-4 py-2 hover:bg-gray-100">Informasi</a></li>
+                            <li><a href="profil.html#demografi" class="block px-4 py-2 hover:bg-gray-100">Demografi</a></li>
+                            <li><a href="profil.html#sejarah" class="block px-4 py-2 hover:bg-gray-100">Sejarah</a></li>
+                            <li><a href="profil.html#visi-misi" class="block px-4 py-2 hover:bg-gray-100">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="flex items-center text-primary font-medium hover:text-secondary transition">
+                            Media <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                            <li><a href="galeri.html" class="block px-4 py-2 hover:bg-gray-100">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="text-gray-700 font-medium hover:text-secondary transition">Kontak</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobileMenu">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block py-2 text-gray-700 font-medium">Home</a></li>
+                    <li>
+                        <a href="profil.html" class="block py-2 text-gray-700 font-medium">Profil</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="profil.html#informasi" class="block py-1 text-gray-600">Informasi</a></li>
+                            <li><a href="profil.html#demografi" class="block py-1 text-gray-600">Demografi</a></li>
+                            <li><a href="profil.html#sejarah" class="block py-1 text-gray-600">Sejarah</a></li>
+                            <li><a href="profil.html#visi-misi" class="block py-1 text-gray-600">Visi & Misi</a></li>
+                        </ul>
+                    
+                        <a href="#" class="block py-2 text-primary font-medium">Media</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="umkm.html" class="block py-1 text-gray-600">UMKM</a></li>
+                            <li><a href="galeri.html" class="block py-1 text-gray-600">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="block py-2 text-gray-700 font-medium">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-secondary">Home</a>
+                <span class="text-gray-400">›</span>
+                <span class="text-gray-600">Galeri Foto</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Gallery Hero -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-4xl font-bold text-gray-800">Galeri Foto Kampung</h1>
+                <a href="index.html" class="text-primary hover:text-secondary font-medium flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Home
+                </a>
+            </div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Kumpulan dokumentasi kegiatan, pemandangan, dan kehidupan sehari-hari di Kampung Kumendaman Suryodiningratan Mantrijeron</p>
+        </div>
+    </section>
+
+    <!-- Gallery Main -->
+    <main class="container mx-auto px-4 pb-12">
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Kegiatan Gotong Royong" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Kegiatan Gotong Royong</h3>
+                            <p class="text-sm">Warga membersihkan lingkungan kampung bersama-sama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Pemandangan Kampung" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Pemandangan Alam Kampung</h3>
+                            <p class="text-sm">View indah kampung di pagi hari yang cerah</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Balai Kampung" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Balai Kampung</h3>
+                            <p class="text-sm">Tempat berkumpul warga untuk musyawarah</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Kerajinan Tangan" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Kerajinan Tangan Warga</h3>
+                            <p class="text-sm">Produk anyaman tradisional khas kampung</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Makanan Tradisional" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Makanan Tradisional</h3>
+                            <p class="text-sm">Kue dan jajanan khas yang dibuat warga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Kegiatan Posyandu" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Kegiatan Posyandu</h3>
+                            <p class="text-sm">Pemeriksaan kesehatan balita dan ibu hamil</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Lomba 17 Agustus" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Lomba 17 Agustus</h3>
+                            <p class="text-sm">Perayaan kemerdekaan dengan berbagai lomba tradisional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Pertemuan Warga" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Pertemuan Warga</h3>
+                            <p class="text-sm">Musyawarah pembangunan kampung</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 9 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1518832553480-cd0e625ed3e6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Taman Kampung" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Taman Kampung</h3>
+                            <p class="text-sm">Area hijau untuk rekreasi keluarga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 10 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Kegiatan Olahraga" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Kegiatan Olahraga</h3>
+                            <p class="text-sm">Senam bersama warga setiap minggu pagi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 11 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Pentas Seni" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Pentas Seni</h3>
+                            <p class="text-sm">Penampilan seni budaya tradisional</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto 12 -->
+                <div class="relative group overflow-hidden rounded-lg shadow-md">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Pasar Murah" class="w-full h-64 object-cover transition duration-300 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition duration-300 flex items-end">
+                        <div class="p-4 text-white transform translate-y-full group-hover:translate-y-0 transition duration-300">
+                            <h3 class="font-bold text-lg mb-1">Pasar Murah</h3>
+                            <p class="text-sm">Bazar kebutuhan pokok dengan harga terjangkau</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Tentang Web</h4>
+                    <p class="text-gray-300">Website Kampung Kumendaman Suryodiningratan Mantrijeron, Yogyakarta. Media komunikasi dan transparansi Pemerintah Kampung</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Kampung</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Jl. Suryodiningratan, Mantrijeron, Yogyakarta</p>
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i> 081 234 567 89</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i> admin@kumendaman.id</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Penting</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Puskesmas - (0274) 876208</li>
+                        <li>Polsek - (0274) 86184</li>
+                        <li>Damkar - (0274) 854828</li>
+                        <li>PIN - 123</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="profil.html" class="text-gray-300 hover:text-white transition">Profil Kampung</a></li>
+                        <li><a href="umkm.html" class="text-gray-300 hover:text-white transition">UMKM</a></li>
+                        <li><a href="galleryfull.html" class="text-gray-300 hover:text-white transition">Galeri Foto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>Copyright © Kampung Kumendaman Suryodiningratan Mantrijeron. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="fixed bottom-6 right-6 bg-primary hover:bg-blue-800 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition duration-300" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

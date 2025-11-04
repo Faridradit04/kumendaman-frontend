@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Kampung Kumendaman Suryodiningratan Mantrijeron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="custom.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#dc2626',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo_kumendaman.png" alt="Logo Kampung" class="h-10 w-10">
+                    <div class="flex flex-col ">
+                    <span class="text-xl font-bold text-primary">Kumendaman</span>
+                    <span class="text-sm text-gray-600">Kelurahan Suryodiningratan</span>
+
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-gray-700 font-medium hover:text-secondary transition">Home</a></li>
+                    <li class="dropdown relative">
+                        <a href="profil.html" class="flex items-center text-primary font-medium hover:text-secondary transition">
+                            Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="#informasi" class="block px-4 py-2 hover:bg-gray-100">Informasi</a></li>
+                            <li><a href="#demografi" class="block px-4 py-2 hover:bg-gray-100">Demografi</a></li>
+                            <li><a href="#sejarah" class="block px-4 py-2 hover:bg-gray-100">Sejarah</a></li>
+                            <li><a href="#visi-misi" class="block px-4 py-2 hover:bg-gray-100">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="flex items-center text-gray-700 font-medium hover:text-secondary transition">
+                            Media <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                            <li><a href="galeri.html" class="block px-4 py-2 hover:bg-gray-100">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="text-gray-700 font-medium hover:text-secondary transition">Kontak</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-700" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobileMenu">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block py-2 text-gray-700 font-medium">Home</a></li>
+                    <li>
+                        <a href="profil.html" class="block py-2 text-primary font-medium">Profil</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="#informasi" class="block py-1 text-gray-600">Informasi</a></li>
+                            <li><a href="#demografi" class="block py-1 text-gray-600">Demografi</a></li>
+                            <li><a href="#sejarah" class="block py-1 text-gray-600">Sejarah</a></li>
+                            <li><a href="#visi-misi" class="block py-1 text-gray-600">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+                   
+                    <li>
+                        <a href="#" class="block py-2 text-gray-700 font-medium">Media</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="umkm.html" class="block py-1 text-gray-600">UMKM</a></li>
+                            <li><a href="galeri.html" class="block py-1 text-gray-600">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="block py-2 text-gray-700 font-medium">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4">
+            <nav class="flex space-x-2 text-sm">
+                <a href="index.html" class="text-primary hover:text-secondary">Home</a>
+                <span class="text-gray-400">/</span>
+                <span class="text-gray-600">Profil</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Informasi Kampung -->
+        <section id="informasi" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Informasi Kampung</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">Nama Kampung</h4>
+                    <p class="text-gray-600">Kampung Kumendaman Suryodiningratan Mantrijeron</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">Kecamatan</h4>
+                    <p class="text-gray-600">Mantrijeron</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">Kota</h4>
+                    <p class="text-gray-600">Yogyakarta</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">Kode Pos</h4>
+                    <p class="text-gray-600">55143</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">Luas Wilayah</h4>
+                    <p class="text-gray-600">25 Hektar</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">Jumlah Penduduk</h4>
+                    <p class="text-gray-600">3,250 Jiwa</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demografi -->
+        <section id="demografi" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Demografi</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h4 class="font-bold text-lg mb-2">Jumlah KK</h4>
+                    <p class="text-3xl font-bold text-primary">850</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h4 class="font-bold text-lg mb-2">Laki-laki</h4>
+                    <p class="text-3xl font-bold text-primary">1,620</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h4 class="font-bold text-lg mb-2">Perempuan</h4>
+                    <p class="text-3xl font-bold text-primary">1,630</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h4 class="font-bold text-lg mb-2">Jumlah RW</h4>
+                    <p class="text-3xl font-bold text-primary">4</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <h4 class="font-bold text-lg mb-2">Jumlah RT</h4>
+                    <p class="text-3xl font-bold text-primary">16</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sejarah -->
+        <section id="sejarah" class="mb-16 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Sejarah Kampung</h2>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <div class="prose max-w-none">
+                    <p class="text-gray-600 mb-4">Kampung Kumendaman Suryodiningratan Mantrijeron memiliki sejarah panjang yang terkait dengan perkembangan Kota Yogyakarta. Nama "Suryodiningratan" sendiri diambil dari nama bangsawan Keraton Yogyakarta yang pernah menempati wilayah ini.</p>
+                    <p class="text-gray-600 mb-4">Kampung ini berkembang menjadi pusat permukiman yang harmonis dengan mempertahankan nilai-nilai tradisional sambil mengadopsi perkembangan modern. Masyarakat Kampung Kumendaman dikenal dengan semangat gotong royong yang tinggi dan pelestarian budaya lokal.</p>
+                    <p class="text-gray-600">Seiring berjalannya waktu, kampung ini terus berkembang menjadi kawasan yang asri dengan berbagai fasilitas umum yang memadai untuk mendukung kesejahteraan warganya.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visi & Misi -->
+        <section id="visi-misi" class="scroll-mt-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Visi & Misi</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-primary text-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-bold mb-4">Visi</h3>
+                    <p class="text-lg italic">"Terwujudnya Kampung Kumendaman Suryodiningratan Mantrijeron yang Mandiri, Sejahtera, dan Berbudaya dalam Lingkungan yang Asri dan Berkelanjutan"</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Misi</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Meningkatkan kualitas pelayanan publik kepada masyarakat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Mengembangkan potensi ekonomi lokal dan UMKM</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Melestarikan budaya dan kearifan lokal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Menjaga kelestarian lingkungan dan kebersihan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mt-1 mr-3"></i>
+                            <span class="text-gray-600">Meningkatkan partisipasi masyarakat dalam pembangunan</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Tentang Web</h4>
+                    <p class="text-gray-300">Website Kampung Kumendaman Suryodiningratan Mantrijeron, Yogyakarta. Media komunikasi dan transparansi Pemerintah Kampung</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Kampung</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Jl. Suryodiningratan, Mantrijeron, Yogyakarta</p>
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i> 081 234 567 89</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i> admin@kumendaman.id</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Penting</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Puskesmas - (0274) 876208</li>
+                        <li>Polsek - (0274) 86184</li>
+                        <li>Damkar - (0274) 854828</li>
+                        <li>PIN - 123</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="profil.html" class="text-gray-300 hover:text-white transition">Profil Kampung</a></li>
+                        <li><a href="umkm.html" class="text-gray-300 hover:text-white transition">UMKM</a></li>
+                        <li><a href="galeri.html" class="text-gray-300 hover:text-white transition">Galeri Foto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>Copyright © Kampung Kumendaman Suryodiningratan Mantrijeron. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="fixed bottom-6 right-6 bg-primary hover:bg-blue-800 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition duration-300" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

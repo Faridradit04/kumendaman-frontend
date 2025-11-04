@@ -1,0 +1,66 @@
+/* custom.css - Styles tambahan untuk dark mode dan animasi */
+
+/* Smooth transitions untuk dark mode */
+.transition-colors {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Style untuk notifikasi */
+.custom-notification {
+    transform: translateX(100%);
+    min-width: 300px;
+    max-width: 500px;
+}
+
+/* Style untuk back to top button */
+#backToTop {
+    transition: opacity 0.3s ease;
+}
+
+/* Dark mode specific styles */
+.dark-mode-active .bg-white {
+    background-color: #1f2937 !important;
+}
+
+.dark-mode-active .text-gray-800 {
+    color: #f3f4f6 !important;
+}
+
+.dark-mode-active .text-gray-600 {
+    color: #d1d5db !important;
+}
+
+/* Memastikan gambar tetap terlihat baik di dark mode */
+.dark-mode-active img {
+    filter: brightness(0.9);
+}
+
+/* Style untuk form elements di dark mode */
+.dark-mode-active input,
+.dark-mode-active textarea,
+.dark-mode-active select {
+    background-color: #374151 !important;
+    color: white !important;
+    border-color: #4b5563 !important;
+}
+
+.dark-mode-active input::placeholder,
+.dark-mode-active textarea::placeholder {
+    color: #9ca3af !important;
+}
+
+/* Style khusus untuk cards di dark mode */
+.dark-mode-active .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Memastikan border colors sesuai di dark mode */
+.dark-mode-active .border-gray-300 {
+    border-color: #4b5563 !important;
+}
+
+/* Style untuk active states di dark mode */
+.dark-mode-active .active {
+    border-color: #3b82f6 !important;
+}
+

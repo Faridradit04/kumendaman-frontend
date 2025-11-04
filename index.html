@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kampung - Kampung Kumendaman Suryodiningratan Mantrijeron</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#dc2626',
+                        accent: '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="images/logo_kumendaman.png" alt="Logo Kampung" class="h-10 w-10">
+                    <div class="flex flex-col ">
+                    <span class="text-xl font-bold text-primary">Kumendaman</span>
+                    <span class="text-sm text-gray-600">Kelurahan Suryodiningratan</span>
+
+                    </div>
+                    
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-6 items-center">
+                    <li><a href="index.html" class="text-primary font-medium hover:text-secondary transition">Home</a></li>
+                    <li class="dropdown relative">
+                        <a href="profil.html" class="flex items-center text-gray-700 font-medium hover:text-secondary transition">
+                            Profil <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="profil.html#informasi" class="block px-4 py-2 hover:bg-gray-100">Informasi</a></li>
+                            <li><a href="profil.html#demografi" class="block px-4 py-2 hover:bg-gray-100">Demografi</a></li>
+                            <li><a href="profil.html#sejarah" class="block px-4 py-2 hover:bg-gray-100">Sejarah</a></li>
+                            <li><a href="profil.html#visi-misi" class="block px-4 py-2 hover:bg-gray-100">Visi & Misi</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown relative">
+                        <a href="#" class="flex items-center text-gray-700 font-medium hover:text-secondary transition">
+                            Media <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <ul class="dropdown-menu absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-2 hidden z-10">
+                            <li><a href="umkm.html" class="block px-4 py-2 hover:bg-gray-100">UMKM</a></li>
+                            <li><a href="galeri.html" class="block px-4 py-2 hover:bg-gray-100">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="text-gray-700 font-medium hover:text-secondary transition">Kontak</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+               <button class="md:hidden text-gray-700" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="md:hidden mt-4 hidden" id="mobileMenu">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block py-2 text-primary font-medium">Home</a></li>
+                    <li>
+                        <a href="profil.html" class="block py-2 text-gray-700 font-medium">Profil</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="profil.html#informasi" class="block py-1 text-gray-600">Informasi</a></li>
+                            <li><a href="profil.html#demografi" class="block py-1 text-gray-600">Demografi</a></li>
+                            <li><a href="profil.html#sejarah" class="block py-1 text-gray-600">Sejarah</a></li>
+                            <li><a href="profil.html#visi-misi" class="block py-1 text-gray-600">Visi & Misi</a></li>
+                        </ul>
+                    
+                        <a href="#" class="block py-2 text-gray-700 font-medium">Media</a>
+                        <ul class="ml-4 mt-2 space-y-2">
+                            <li><a href="umkm.html" class="block py-1 text-gray-600">UMKM</a></li>
+                            <li><a href="galeri.html" class="block py-1 text-gray-600">Gallery Seni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="kontak.html" class="block py-2 text-gray-700 font-medium">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section dengan Slideshow - FULL WIDTH -->
+    <section class="slider-container">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-overlay">
+                    <h2 class="slide-title">Selamat Datang di Kampung Kumendaman</h2>
+                    <p class="slide-description">Kampung Kumendaman Suryodiningratan Mantrijeron, Yogyakarta - Sebuah kampung dengan nilai budaya dan kearifan lokal yang tinggi.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-overlay">
+                    <h2 class="slide-title">Budaya dan Tradisi</h2>
+                    <p class="slide-description">Mengenal lebih dekat budaya dan tradisi yang masih dilestarikan di Kampung Kumendaman.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-overlay">
+                    <h2 class="slide-title">UMKM Lokal</h2>
+                    <p class="slide-description">Mendukung dan mengembangkan usaha mikro, kecil, dan menengah di Kampung Kumendaman.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')">
+                <div class="slide-overlay">
+                    <h2 class="slide-title">Kegiatan Masyarakat</h2>
+                    <p class="slide-description">Berbagai kegiatan masyarakat yang mempererat tali persaudaraan di Kampung Kumendaman.</p>
+                </div>
+            </div>
+            
+            <button class="nav-btn prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+            <button class="nav-btn next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                </svg>
+            </button>
+            
+            <button class="auto-play-toggle">
+                <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                </svg>
+                Auto Play
+            </button>
+            
+            <div class="slider-info">
+                <span id="current-slide">1</span> / <span id="total-slides">4</span>
+            </div>
+        </div>
+        
+        <div class="slider-controls">
+            <button class="slider-btn active"></button>
+            <button class="slider-btn"></button>
+            <button class="slider-btn"></button>
+            <button class="slider-btn"></button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Jelajahi Kampung Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Jelajahi Kampung Kumendaman</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Kampung Kumendaman Suryodiningratan Mantrijeron adalah sebuah kampung yang kaya akan budaya dan tradisi Jawa. 
+                    Terletak di jantung Yogyakarta, kampung ini mempertahankan nilai-nilai luhur sambil beradaptasi dengan perkembangan zaman.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Kampung Kumendaman" class="w-full h-64 md:h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Kenali Lebih Dekat Kampung Kami</h3>
+                        <p class="text-gray-600 mb-6">
+                            Dengan sejarah yang panjang dan budaya yang kaya, Kampung Kumendaman menawarkan pengalaman otentik kehidupan masyarakat Yogyakarta. 
+                            Dari arsitektur tradisional hingga kegiatan masyarakat yang masih menjaga tradisi leluhur.
+                        </p>
+                        <a href="profil.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
+                            Lihat Profil Lengkap
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Administrasi Penduduk Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-primary to-blue-700 rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/3 p-8 md:p-12 text-white">
+                        <h2 class="text-3xl font-bold mb-4">Administrasi Penduduk</h2>
+                        <p class="mb-6 text-blue-100">
+                            Layanan administrasi kependudukan tersedia untuk warga Kampung Kumendaman. 
+                            Kami mempermudah proses pengurusan dokumen kependudukan dengan pelayanan yang cepat dan ramah.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent"></i>
+                                Pengurusan KTP dan Kartu Keluarga
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent"></i>
+                                Surat Keterangan Domisili
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent"></i>
+                                Surat Keterangan Tidak Mampu
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-accent"></i>
+                                Legalisir Dokumen
+                            </li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="kontak.html" class="bg-accent hover:bg-yellow-500 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
+                                Hubungi Kami
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 bg-blue-800 p-8 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-file-alt text-6xl mb-4 text-accent"></i>
+                            <h3 class="text-xl font-bold mb-2">Pelayanan Cepat</h3>
+                            <p class="text-blue-200">Proses administrasi yang mudah dan transparan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wisata Desa Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Wisata Desa Dan UMKM</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Wisata Budaya" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-accent text-white py-1 px-3 rounded-full text-sm font-medium">
+                            Budaya
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Wisata Budaya & Sejarah</h3>
+                        <p class="text-gray-600 mb-4">
+                            Jelajahi kekayaan budaya dan sejarah Kampung Kumendaman melalui berbagai situs bersejarah dan kegiatan budaya yang masih hidup.
+                        </p>
+                        <ul class="text-gray-600 mb-6 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                <span>Rumah Adat Jawa Tradisional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                <span>Pertunjukan Seni Tradisional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-primary mr-2 mt-1"></i>
+                                <span>Workshop Batik & Kerajinan</span>
+                            </li>
+                        </ul>
+                        <a href="galeri.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                            Jelajahi Galeri
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Wisata Kuliner" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-secondary text-white py-1 px-3 rounded-full text-sm font-medium">
+                            Kuliner
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Wisata Kuliner & UMKM</h3>
+                        <p class="text-gray-600 mb-4">
+                            Nikmati kelezatan kuliner khas Yogyakarta dan jelajahi berbagai produk UMKM unggulan dari Kampung Kumendaman.
+                        </p>
+                        <ul class="text-gray-600 mb-6 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-utensils text-primary mr-2 mt-1"></i>
+                                <span>Kuliner Tradisional Jawa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-shopping-bag text-primary mr-2 mt-1"></i>
+                                <span>Oleh-oleh Khas Kampung</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-hands-helping text-primary mr-2 mt-1"></i>
+                                <span>Workshop Kuliner</span>
+                            </li>
+                        </ul>
+                        <a href="umkm.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                            Lihat UMKM
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Tentang Web</h4>
+                    <p class="text-gray-300">Website Kampung Kumendaman Suryodiningratan Mantrijeron, Yogyakarta. Media komunikasi dan transparansi Pemerintah Kampung</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Kampung</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Jl. Suryodiningratan, Mantrijeron, Yogyakarta</p>
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i> 081 234 567 89</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i> admin@kumendaman.id</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak Penting</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Puskesmas - (0274) 876208</li>
+                        <li>Polsek - (0274) 86184</li>
+                        <li>Damkar - (0274) 854828</li>
+                        <li>PIN - 123</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Menu Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="profil.html" class="text-gray-300 hover:text-white transition">Profil Kampung</a></li>
+                        <li><a href="umkm.html" class="text-gray-300 hover:text-white transition">UMKM</a></li>
+                        <li><a href="galeri.html" class="text-gray-300 hover:text-white transition">Galeri Foto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>Copyright © Kampung Kumendaman Suryodiningratan Mantrijeron. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Toggle -->
+    <button class="fixed bottom-6 right-6 bg-primary hover:bg-blue-800 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition duration-300" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const sliderBtns = document.querySelectorAll('.slider-btn');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const currentSlideEl = document.getElementById('current-slide');
+            const totalSlidesEl = document.getElementById('total-slides');
+            const autoPlayToggle = document.querySelector('.auto-play-toggle');
+            const toggleIcon = autoPlayToggle.querySelector('.toggle-icon');
+            
+            let currentSlide = 0;
+            let isAutoPlay = true;
+            let slideInterval;
+            
+            // Set total slides count
+            totalSlidesEl.textContent = slides.length;
+            
+            // Function to update the slider
+            function updateSlider() {
+                // Remove active class from all slides and buttons
+                slides.forEach(slide => slide.classList.remove('active'));
+                sliderBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to current slide and button
+                slides[currentSlide].classList.add('active');
+                sliderBtns[currentSlide].classList.add('active');
+                
+                // Update current slide indicator
+                currentSlideEl.textContent = currentSlide + 1;
+            }
+            
+            // Function to go to next slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlider();
+            }
+            
+            // Function to go to previous slide
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlider();
+            }
+            
+            // Function to start auto play
+            function startAutoPlay() {
+                slideInterval = setInterval(nextSlide, 5000);
+                isAutoPlay = true;
+                toggleIcon.innerHTML = '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>';
+            }
+            
+            // Function to stop auto play
+            function stopAutoPlay() {
+                clearInterval(slideInterval);
+                isAutoPlay = false;
+                toggleIcon.innerHTML = '<path d="M9 16h2V8H9v8zm3-14C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-4h2V8h-2v8z"/>';
+            }
+            
+            // Event listeners for navigation buttons
+            nextBtn.addEventListener('click', function() {
+                nextSlide();
+                if (isAutoPlay) {
+                    stopAutoPlay();
+                    startAutoPlay();
+                }
+            });
+            
+            prevBtn.addEventListener('click', function() {
+                prevSlide();
+                if (isAutoPlay) {
+                    stopAutoPlay();
+                    startAutoPlay();
+                }
+            });
+            
+            // Event listeners for slider buttons
+            sliderBtns.forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    currentSlide = index;
+                    updateSlider();
+                    if (isAutoPlay) {
+                        stopAutoPlay();
+                        startAutoPlay();
+                    }
+                });
+            });
+            
+            // Event listener for auto play toggle
+            autoPlayToggle.addEventListener('click', function() {
+                if (isAutoPlay) {
+                    stopAutoPlay();
+                } else {
+                    startAutoPlay();
+                }
+            });
+            
+            // Initialize auto play
+            startAutoPlay();
+            
+           
+           
+        });
+    </script>
+</body>
+</html>
