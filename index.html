@@ -20,6 +20,79 @@
         }
     </script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    
+        .slide-up {
+            animation: slideUp 1s ease-out;
+        }
+        
+        .pulse-glow {
+            animation: pulseGlow 2s infinite;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(30, 64, 175, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(30, 64, 175, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 64, 175, 0); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+        }
+        
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+    
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
@@ -27,13 +100,10 @@
         <nav class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-2">
-                    
-                    <div class="flex flex-col ">
-                    <span class="text-xl font-bold text-primary">Kumendaman</span>
-                    <span class="text-sm text-gray-600">Kelurahan Suryodiningratan</span>
-
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold text-primary">Kumendaman</span>
+                        <span class="text-sm text-gray-600">Kelurahan Suryodiningratan</span>
                     </div>
-                    
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -61,12 +131,11 @@
                     </li>
                    <li><a href="seni.html" class="block py-2 text-gray-700 font-medium">Seni & Budaya</a></li>
                    <li><a href="umkm.html" class="block py-2 text-gray-700 font-medium">Usaha</a></li>
-
                     <li><a href="kontak.html" class="text-gray-700 font-medium hover:text-secondary transition">Kontak</a></li>
                 </ul>
                 
                 <!-- Mobile Menu Button -->
-               <button class="md:hidden text-gray-700" id="mobileMenuButton">
+                <button class="md:hidden text-gray-700" id="mobileMenuButton">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
@@ -91,8 +160,7 @@
                         </ul>
                     </li>
                     <li><a href="seni.html" class="block py-2 text-gray-700 font-medium">Seni & Budaya</a></li>
-                                       <li><a href="umkm.html" class="block py-2 text-gray-700 font-medium">Usaha</a></li>
-
+                    <li><a href="umkm.html" class="block py-2 text-gray-700 font-medium">Usaha</a></li>
                     <li><a href="kontak.html" class="block py-2 text-gray-700 font-medium">Kontak</a></li>
                 </ul>
             </div>
@@ -120,7 +188,7 @@
                     <p class="slide-description">Mendukung dan mengembangkan usaha mikro, kecil, dan menengah di Kampung Kumendaman.</p>
                 </div>
             </div>
-            <div class="slide" style="background-image: url('images/Kegiatan\ PKK.jpg')">
+            <div class="slide" style="background-image: url('images/Kegiatan%20PKK.jpg')">
                 <div class="slide-overlay">
                     <h2 class="slide-title">Kegiatan Masyarakat</h2>
                     <p class="slide-description">Berbagai kegiatan masyarakat yang mempererat tali persaudaraan di Kampung Kumendaman.</p>
@@ -157,11 +225,10 @@
             <button class="slider-btn"></button>
         </div>
     </section>
-
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
         <!-- Jelajahi Kampung Section -->
-        <section class="mb-16">
+        <section class="mb-16 slide-up">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Jelajahi Kampung Kumendaman</h2>
                 <p class="text-gray-600 max-w-3xl mx-auto">
@@ -182,60 +249,139 @@
                             Dengan sejarah yang panjang dan budaya yang kaya, Kampung Kumendaman menawarkan pengalaman otentik kehidupan masyarakat Yogyakarta. 
                             Dari arsitektur tradisional hingga kegiatan masyarakat yang masih menjaga tradisi leluhur.
                         </p>
-                        <a href="profil.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
+                        <a href="profil.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center pulse-glow">
                             Lihat Profil Lengkap
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Seni & Budaya Section -->
 
-
-        <!-- CTA Section -->
-        <div class="text-center mb-10">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Tertarik Mengenal Lebih Dalam?</h3>
-            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-                Jelajahi lebih banyak tentang seni dan budaya Kumendaman. Temukan jadwal pertunjukan, workshop, 
-                dan kegiatan budaya lainnya yang bisa Anda ikuti.
-            </p>
-            <a href="seni.html" class="inline-block bg-accent hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
-                Jelajahi Seni & Budaya Lengkap
-                <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </div>
- <section class="py-16">
-  <section class="mb-16">
-    <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
-                <div class="md:flex">
-                    <div class="p-8 flex flex-col justify-center">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Kenali UMKM Yang ada di kumendaman</h3>
-                        <p class="text-gray-600 mb-6">
-                            Dukungan terhadap Usaha Mikro, Kecil, dan Menengah (UMKM) di Kampung Kumendaman sangat penting untuk 
-                            pertumbuhan ekonomi lokal. Kampung ini memiliki berbagai UMKM yang menawarkan produk unik dan berkualitas, 
-                            mulai dari kerajinan tangan hingga kuliner khas daerah.
-                        </p>
-                        <a href="umkm.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
-                            Lihat UMKM Lengkap
-                        </a>
+        <!-- Features Section -->
+        <section class="py-16 slide-up">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Keunikan Kampung Kumendaman</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Temukan berbagai keunikan dan keunggulan yang membuat Kampung Kumendaman menjadi tempat yang istimewa
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 text-center">
+                    <div class="feature-icon w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-landmark text-2xl"></i>
                     </div>
-                    
-                    
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Sejarah & Budaya</h3>
+                    <p class="text-gray-600">
+                        Kampung dengan sejarah panjang yang masih mempertahankan tradisi dan budaya Jawa asli.
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 text-center">
+                    <div class="feature-icon w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Komunitas Harmonis</h3>
+                    <p class="text-gray-600">
+                        Masyarakat yang hidup rukun dengan semangat gotong royong yang tinggi.
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl shadow-md p-6 text-center">
+                    <div class="feature-icon w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-store text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">UMKM Berkembang</h3>
+                    <p class="text-gray-600">
+                        Berbagai usaha mikro, kecil, dan menengah yang terus berkembang dan didukung warga.
+                    </p>
                 </div>
             </div>
-           
-            
-            
         </section>
-</section>
 
+        <!-- Seni & Budaya Section -->
+        <section class="py-16 bg-gray-100 rounded-xl slide-up">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Seni & Budaya Kumendaman</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        Kampung Kumendaman memiliki kekayaan seni dan budaya yang masih dilestarikan hingga kini
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="images/keroncong.jpg" alt="Keroncong" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Orkes Keroncong Kanjengan</h3>
+                            <p class="text-gray-600 mb-4">Grup musik keroncong yang masih aktif tampil dalam berbagai acara kampung dan event budaya kota.</p>
+                            <a href="seni.html" class="text-primary font-medium hover:text-secondary transition">Selengkapnya →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <img src="images/angklung.jpg" alt="Angklung" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Kegiatan Angklung RW 8</h3>
+                            <p class="text-gray-600 mb-4">Kegiatan angklung yang menjadi ruang berkumpul penuh keakraban bagi warga RW 8.</p>
+                            <a href="seni.html" class="text-primary font-medium hover:text-secondary transition">Selengkapnya →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="seni.html" class="inline-block bg-accent hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                        Jelajahi Seni & Budaya Lengkap
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    </div>
-</section>
-    
+        <!-- UMKM Section -->
+        <section class="py-16 slide-up">
+            <div class="container mx-auto px-4">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+                    <div class="md:flex">
+                        <div class="md:w-1/2">
+                            <img src="images/sataypinggirjalan.jpg" 
+                                 alt="UMKM Kumendaman" class="w-full h-64 md:h-full object-cover">
+                        </div>
+                        <div class="p-8 flex flex-col justify-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Kenali UMKM Yang ada di Kumendaman</h3>
+                            <p class="text-gray-600 mb-6">
+                                Dukungan terhadap Usaha Mikro, Kecil, dan Menengah (UMKM) di Kampung Kumendaman sangat penting untuk 
+                                pertumbuhan ekonomi lokal. Kampung ini memiliki berbagai UMKM yang menawarkan produk unik dan berkualitas, 
+                                mulai dari kerajinan tangan hingga kuliner khas daerah.
+                            </p>
+                            <a href="umkm.html" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-lg transition duration-300 text-center">
+                                Lihat UMKM Lengkap
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
 
-       
+        <!-- Testimonials Section -->
+        
 
+        <!-- CTA Section -->
+        <section class="py-16 text-center slide-up">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Tertarik Mengenal Lebih Dekat?</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Kunjungi Kampung Kumendaman dan rasakan sendiri kehangatan serta keunikan kehidupan masyarakatnya.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="kontak.html" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Hubungi Kami
+                </a>
+                <a href="galeri.html" class="bg-white hover:bg-gray-100 text-primary border border-primary font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Lihat Galeri
+                </a>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -287,108 +433,179 @@
     </button>
 
     <script src="script.js"></script>
-    <script>
-         document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.slide');
-            const sliderBtns = document.querySelectorAll('.slider-btn');
-            const prevBtn = document.querySelector('.prev');
-            const nextBtn = document.querySelector('.next');
-            const currentSlideEl = document.getElementById('current-slide');
-            const totalSlidesEl = document.getElementById('total-slides');
-            const autoPlayToggle = document.querySelector('.auto-play-toggle');
-            const toggleIcon = autoPlayToggle.querySelector('.toggle-icon');
-            
-            let currentSlide = 0;
-            let isAutoPlay = true;
-            let slideInterval;
-            
-            // Set total slides count
-            totalSlidesEl.textContent = slides.length;
-            
-            // Function to update the slider
-            function updateSlider() {
-                // Remove active class from all slides and buttons
-                slides.forEach(slide => slide.classList.remove('active'));
-                sliderBtns.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to current slide and button
-                slides[currentSlide].classList.add('active');
-                sliderBtns[currentSlide].classList.add('active');
-                
-                // Update current slide indicator
-                currentSlideEl.textContent = currentSlide + 1;
-            }
-            
-            // Function to go to next slide
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                updateSlider();
-            }
-            
-            // Function to go to previous slide
-            function prevSlide() {
-                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                updateSlider();
-            }
-            
-            // Function to start auto play
-            function startAutoPlay() {
-                slideInterval = setInterval(nextSlide, 5000);
-                isAutoPlay = true;
-                toggleIcon.innerHTML = '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>';
-            }
-            
-            // Function to stop auto play
-            function stopAutoPlay() {
-                clearInterval(slideInterval);
-                isAutoPlay = false;
-                toggleIcon.innerHTML = '<path d="M9 16h2V8H9v8zm3-14C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-4h2V8h-2v8z"/>';
-            }
-            
-            // Event listeners for navigation buttons
-            nextBtn.addEventListener('click', function() {
-                nextSlide();
-                if (isAutoPlay) {
-                    stopAutoPlay();
-                    startAutoPlay();
-                }
-            });
-            
-            prevBtn.addEventListener('click', function() {
-                prevSlide();
-                if (isAutoPlay) {
-                    stopAutoPlay();
-                    startAutoPlay();
-                }
-            });
-            
-            // Event listeners for slider buttons
-            sliderBtns.forEach((btn, index) => {
-                btn.addEventListener('click', function() {
-                    currentSlide = index;
-                    updateSlider();
-                    if (isAutoPlay) {
-                        stopAutoPlay();
-                        startAutoPlay();
-                    }
-                });
-            });
-            
-            // Event listener for auto play toggle
-            autoPlayToggle.addEventListener('click', function() {
-                if (isAutoPlay) {
-                    stopAutoPlay();
-                } else {
-                    startAutoPlay();
-                }
-            });
-            
-            // Initialize auto play
+    <script> document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    // Initialize slider
+    initSlider();
+
+});
+
+// Slider Functionality
+function initSlider() {
+    const slides = document.querySelectorAll('.slide');
+    const sliderButtons = document.querySelectorAll('.slider-btn');
+    const prevButton = document.querySelector('.nav-btn.prev');
+    const nextButton = document.querySelector('.nav-btn.next');
+    const autoPlayToggle = document.querySelector('.auto-play-toggle');
+    const currentSlideElement = document.getElementById('current-slide');
+    const totalSlidesElement = document.getElementById('total-slides');
+    
+    let currentSlide = 0;
+    let autoPlayInterval;
+    let isAutoPlaying = true;
+    
+    // Set total slides count
+    if (totalSlidesElement) {
+        totalSlidesElement.textContent = slides.length;
+    }
+    
+    // Function to show slide
+    function showSlide(index) {
+        // Remove active class from all slides and buttons
+        slides.forEach(slide => slide.classList.remove('active'));
+        sliderButtons.forEach(button => button.classList.remove('active'));
+        
+        // Handle index boundaries
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+        
+        // Add active class to current slide and button
+        slides[currentSlide].classList.add('active');
+        sliderButtons[currentSlide].classList.add('active');
+        
+        // Update current slide indicator
+        if (currentSlideElement) {
+            currentSlideElement.textContent = currentSlide + 1;
+        }
+    }
+    
+    // Next slide function
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    // Previous slide function
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+    
+    // Auto play function
+    function startAutoPlay() {
+        if (isAutoPlaying) {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+    }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Toggle auto play
+    function toggleAutoPlay() {
+        isAutoPlaying = !isAutoPlaying;
+        const toggleIcon = autoPlayToggle.querySelector('.toggle-icon');
+        
+        if (isAutoPlaying) {
             startAutoPlay();
-            
-           
-           
+            autoPlayToggle.classList.remove('paused');
+            toggleIcon.style.opacity = '1';
+        } else {
+            stopAutoPlay();
+            autoPlayToggle.classList.add('paused');
+            toggleIcon.style.opacity = '0.5';
+        }
+    }
+    
+    // Event listeners for navigation buttons
+    if (prevButton) {
+        prevButton.addEventListener('click', function() {
+            prevSlide();
+            resetAutoPlay();
         });
-    </script>
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', function() {
+            nextSlide();
+            resetAutoPlay();
+        });
+    }
+    
+    // Event listeners for slider buttons
+    sliderButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            showSlide(index);
+            resetAutoPlay();
+        });
+    });
+    
+    // Event listener for auto play toggle
+    if (autoPlayToggle) {
+        autoPlayToggle.addEventListener('click', toggleAutoPlay);
+    }
+    
+    // Reset auto play timer
+    function resetAutoPlay() {
+        if (isAutoPlaying) {
+            stopAutoPlay();
+            startAutoPlay();
+        }
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetAutoPlay();
+        }
+    });
+    
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const sliderContainer = document.querySelector('.slider-container');
+    
+    if (sliderContainer) {
+        sliderContainer.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        sliderContainer.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+    }
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - next slide
+            nextSlide();
+            resetAutoPlay();
+        }
+        
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - previous slide
+            prevSlide();
+            resetAutoPlay();
+        }
+    }
+    
+    // Initialize the slider
+    showSlide(currentSlide);
+    startAutoPlay();
+}</script>
+   
 </body>
 </html>
